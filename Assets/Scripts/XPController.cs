@@ -47,7 +47,7 @@ public class XPController : MonoBehaviour
             currentLevelXPAmount *= 2;
             xpLevel++;
             OnLevelUpped?.Invoke();
-            Time.timeScale = 0f;
+            Time.timeScale = Mathf.Epsilon;
             playerUI.LevelUpgradePanel.SetActive(true);
 
             playerUI.XPBarFG.fillAmount = (float)xpAmount / currentLevelXPAmount;

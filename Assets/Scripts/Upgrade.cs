@@ -56,8 +56,16 @@ public class Upgrade : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
         upgradeSO = upgradeController.PickRandomUpgrade();
 
-        upgradeNameText.text = upgradeSO.UpgradeType.ToString();
-        upgradeListText.text = $"{upgradeSO.UpgradeType.ToString()} {upgradeSO.UpgradePercent * 100f}%";
+        upgradeNameText.text = upgradeSO.UpgradeType.ToString().PascalCaseToSentence();
+        if(upgradeSO.UpgradeType == UpgradeType.ReloadTime)
+        {
+            //upgradeListText.text = $"{upgradeSO.UpgradeType.ToString()} {upgradeSO.UpgradePercent * 100f}%";
+            upgradeListText.text = $"Reduce your {upgradeSO.UpgradeType.ToString().PascalCaseToSentence()} by {upgradeSO.UpgradePercent * 100f}%";
+        }
+        else
+        {
+            upgradeListText.text = $"Increase your {upgradeSO.UpgradeType.ToString().PascalCaseToSentence()} by {upgradeSO.UpgradePercent * 100f}%";
+        }
     }
 
     public void SelectUpgrade()

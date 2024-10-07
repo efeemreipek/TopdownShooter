@@ -21,9 +21,9 @@ public class CameraShake : Singleton<CameraShake>
     private IEnumerator ShakeCoroutine(float duration)
     {
         isShaking = true;
-        float endTime = Time.time + duration;
+        float endTime = Time.unscaledTime + duration;
 
-        while (Time.time < endTime)
+        while (Time.unscaledTime < endTime)
         {
             yield return null;
         }

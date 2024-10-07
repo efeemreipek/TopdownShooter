@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PickupType: 1
   PickupMaterial: {fileID: 2100000, guid: 2274b5b8cfe45474d8f7e15245891991, type: 2}
-  PickupAmount: -5
+  PickupAmount: 5

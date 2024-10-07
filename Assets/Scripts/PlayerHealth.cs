@@ -33,6 +33,7 @@ public class PlayerHealth : MonoBehaviour
         {
             case UpgradeType.MaxHealth:
                 maxHealth += (int)(maxHealth * upgradeState.UpgradePercent);
+                ChangeHealth(0);
                 PlayerStats.MaxHealth = maxHealth;
                 print(PlayerStats.MaxHealth);
                 break;
